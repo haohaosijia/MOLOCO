@@ -1,0 +1,19 @@
+First I transfer the date format of the origin excel and save as a new csv file.
+Then import the csv file to MySql By code:
+
+create database moloco;
+use moloco;
+CREATE TABLE SAMPLE
+(
+TS DATETIME,
+USER_ID VARCHAR(10),
+COUNTRY_ID VARCHAR(10),
+SITE_ID VARCHAR(10)
+);
+LOAD DATA LOCAL INFILE "D:/job/ds/moloco/sample.txt" INTO TABLE moloco.sample
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+(TS, USER_ID, COUNTRY_ID, SITE_ID);
+
+First question:
+
